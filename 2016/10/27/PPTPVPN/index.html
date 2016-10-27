@@ -94,7 +94,7 @@
 <meta property="og:description" content="相信很多小伙伴都有搭建VPN服务器的经历，在搭建的时候我们会遇到很多问题，经过不懈努力，总算是搭建好了服务器，但日常的使用中我们又该怎么进行维护呢？这又是一个头疼的问题，接下来是我本人搭建PPTP VPN服务器时的一些经验供大家参考。
 基础篇
 建立监控日志　　搭建好的服务器别忘了配置用户登录和登出监控日志，这样有助于我们及时发现问题以此来解决问题，防患未然。这里主要针对是OS为Ubuntu 1">
-<meta property="og:updated_time" content="2016-10-27T14:03:45.709Z">
+<meta property="og:updated_time" content="2016-10-27T14:06:11.738Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PPTP VPN服务器优化（Ubuntu Server）">
 <meta name="twitter:description" content="相信很多小伙伴都有搭建VPN服务器的经历，在搭建的时候我们会遇到很多问题，经过不懈努力，总算是搭建好了服务器，但日常的使用中我们又该怎么进行维护呢？这又是一个头疼的问题，接下来是我本人搭建PPTP VPN服务器时的一些经验供大家参考。
@@ -366,7 +366,7 @@
 <pre><code># log
 echo &quot;login &quot;$PEERNAME&quot; `date -d today +%F_%T`&quot; &quot;$6&quot; &quot;$5&quot; &gt;&gt; /var/log/pptpd.log
 </code></pre><p>意思是以 <code>login 用户名 日期 时间</code> 这样的格式记录在路径为/var/log/的pptpd.log文件里。</p>
-<p>同样使用命令：<code>sudo vim ip-down</code>编辑ip-down文件<br><br>在最后添加：</p>
+<p>同样使用命令：<code>sudo vim ip-down</code>编辑ip-down文件<br>在最后添加：</p>
 <pre><code># log
 echo &quot;logout &quot;$PEERNAME&quot; `date -d today +%F_%T`&quot; &quot;$6&quot; &quot;$5&quot;  &gt;&gt; /var/log/pptpd.log
 </code></pre><p>所表达的意义和上面类似，这样就可以在/var/log/路径下pptpd.log文件里查看用户登录登出VPN的记录了。</p>
