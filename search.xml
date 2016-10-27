@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[日常の分享]]></title>
+      <url>http://yoursite.com/2016/10/15/share20161005/</url>
+      <content type="text"><![CDATA[大家好，又到了分享时间，这次分享的是近期B站上很火的一段舞蹈视频，这段舞蹈出自霓虹歌手水桥舞（美依礼芽）和她的好闺蜜们，舞蹈BGM为：極楽浄土（gokurakujodo） 第二首同样也出自美依里亚，曲名：MIRAI（日文名：未来），视频出自Acfun，为原版歌曲MV じゃ enjoy！ 【みうめ・メイリア・217】極楽浄土[Gokuraku Jodo] OFFiCiALvar dplayer0 = new DPlayer({"element":document.getElementById("dplayer0"),"autoplay":false,"theme":"#FADFA3","loop":false,"video":{"url":"http://cn-zjwz-cu-v-06.acgvideo.com/vg3/d/29/10480235-1-hd.mp4?expires=1477560000&ssig=pwoxpWz-OnUKKLeAhXxD2w&oi=1884384657&rate=0","pic":"http://i2.hdslb.com/bfs/archive/35db778d523663c617f44972a7cf6dac0a5defd4.jpg"},"danmaku":{"api":"http://dplayer.daoapp.io","token":"tokendemo","addition":[" https://dplayer.daoapp.io/bilibili?aid=6445032"]}}); 【GARNiDELiA】Miraivar dplayer1 = new DPlayer({"element":document.getElementById("dplayer1"),"autoplay":false,"theme":"#FADFA3","loop":false,"video":{"url":"http://ofp0bxnjc.bkt.clouddn.com/GARNiDELiA%20-%20Mirai.mp4","pic":"http://cdn.aixifan.com/dotnet/artemis/u/cms/www/201602/22133803hys7u6vr.jpg"},"danmaku":{"api":"http://dplayer.daoapp.io","token":"tokendemo"}});]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>http://yoursite.com/2016/10/05/hello-world/</url>
+      <content type="text"><![CDATA[欢迎来到 Hexo! 这是我的第一篇博文. 查看 documentation 来获得更多的信息. 如果在使用hexo时遇到了麻烦, 可以在这里获得答案 troubleshooting 或者可以在 GitHub上向我提问. 快速上手新建一篇博文1$ hexo new "My New Post" 更多信息: Writing 开启服务器1$ hexo server 更多信息: Server 生成静态页面1$ hexo generate 更多信息: Generating 部署在远端站点1$ hexo deploy 更多信息: Deployment]]></content>
+    </entry>
+
+    
+  
+  
+</search>
