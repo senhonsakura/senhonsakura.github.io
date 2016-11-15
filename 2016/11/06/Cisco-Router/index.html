@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="Cisco 1800路由器　　主要介绍一下Cisco路由器的一些基本的配置，不同版本间配置方式可能可能会有所不同，但知道了原理后基本上也都是大同小异，ジア　行きましょう">
+<meta name="description" content="主要介绍一下Cisco路由器如何配置IPSec VPN和云端软件防火墙实现VPN通信，从而达到在内网无需拨号即可访问国外网站，不同版本间配置方式可能可能会有所不同，但知道了原理后基本上也都是大同小异，ジア　行きましょう">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cisco路由器相关配置手册">
+<meta property="og:title" content="Cisco路由器L2L VPN和云端互联实现无拨号翻墙">
 <meta property="og:url" content="http://blog.senhonsakura.com/2016/11/06/Cisco-Router/index.html">
 <meta property="og:site_name" content="Zhangcy's Blog">
-<meta property="og:description" content="Cisco 1800路由器　　主要介绍一下Cisco路由器的一些基本的配置，不同版本间配置方式可能可能会有所不同，但知道了原理后基本上也都是大同小异，ジア　行きましょう">
-<meta property="og:updated_time" content="2016-11-15T02:13:44.800Z">
+<meta property="og:description" content="主要介绍一下Cisco路由器如何配置IPSec VPN和云端软件防火墙实现VPN通信，从而达到在内网无需拨号即可访问国外网站，不同版本间配置方式可能可能会有所不同，但知道了原理后基本上也都是大同小异，ジア　行きましょう">
+<meta property="og:updated_time" content="2016-11-15T08:43:33.130Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cisco路由器相关配置手册">
-<meta name="twitter:description" content="Cisco 1800路由器　　主要介绍一下Cisco路由器的一些基本的配置，不同版本间配置方式可能可能会有所不同，但知道了原理后基本上也都是大同小异，ジア　行きましょう">
+<meta name="twitter:title" content="Cisco路由器L2L VPN和云端互联实现无拨号翻墙">
+<meta name="twitter:description" content="主要介绍一下Cisco路由器如何配置IPSec VPN和云端软件防火墙实现VPN通信，从而达到在内网无需拨号即可访问国外网站，不同版本间配置方式可能可能会有所不同，但知道了原理后基本上也都是大同小异，ジア　行きましょう">
 
 
 
@@ -134,7 +134,7 @@
 
   <link rel="canonical" href="http://blog.senhonsakura.com/2016/11/06/Cisco-Router/"/>
 
-  <title> Cisco路由器相关配置手册 | Zhangcy's Blog </title>
+  <title> Cisco路由器L2L VPN和云端互联实现无拨号翻墙 | Zhangcy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -314,7 +314,7 @@
             
             
               
-                Cisco路由器相关配置手册
+                Cisco路由器L2L VPN和云端互联实现无拨号翻墙
               
             
           </h1>
@@ -348,7 +348,7 @@
 
           
           
-             <span id="/2016/11/06/Cisco-Router/" class="leancloud_visitors" data-flag-title="Cisco路由器相关配置手册">
+             <span id="/2016/11/06/Cisco-Router/" class="leancloud_visitors" data-flag-title="Cisco路由器L2L VPN和云端互联实现无拨号翻墙">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -370,12 +370,29 @@
       
 
       
-        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="Cisco-1800路由器"><a href="#Cisco-1800路由器" class="headerlink" title="Cisco 1800路由器"></a>Cisco 1800路由器</h1><p>　　主要介绍一下Cisco路由器的一些基本的配置，不同版本间配置方式可能可能会有所不同，但知道了原理后基本上也都是大同小异，ジア　行きましょう<br><a id="more"></a></p>
+        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>　　主要介绍一下Cisco路由器如何配置IPSec VPN和云端软件防火墙实现VPN通信，从而达到在内网无需拨号即可访问国外网站，不同版本间配置方式可能可能会有所不同，但知道了原理后基本上也都是大同小异，ジア　行きましょう<br><a id="more"></a></p>
 <h4 id="配置telnet登陆密码"><a href="#配置telnet登陆密码" class="headerlink" title="配置telnet登陆密码"></a>配置telnet登陆密码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">conf t</div><div class="line"><span class="built_in">enable</span> password <span class="string">"password"</span>     //配置<span class="built_in">enable</span>密码</div><div class="line">line vty 0 4</div><div class="line">password <span class="string">"password"</span>      //配置telnet登陆密码</div><div class="line">login</div></pre></td></tr></table></figure>
 <p><br></p>
 <h4 id="配置snmp"><a href="#配置snmp" class="headerlink" title="配置snmp"></a>配置snmp</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">snmp-server community crm     //crm为自定义的共同体名称，常用Public</div><div class="line">snmp-server <span class="built_in">trap</span>-source FastEthernet0/3/0    //定义那个端口可被监控，一般可不写</div><div class="line">snmp-server host x.x.x.x crm          //在哪台终端（公网地址x.x.x.x）上应用上述定义的共同体</div><div class="line">snmp-server <span class="built_in">enable</span> traps               //启用snmp</div></pre></td></tr></table></figure>
 <p><br></p>
-<h4 id="配置基于ipsec的site-to-site-VPN"><a href="#配置基于ipsec的site-to-site-VPN" class="headerlink" title="配置基于ipsec的site to site VPN"></a>配置基于ipsec的site to site VPN</h4><p>　　此配置的目的在于内网地址能够将所有流量丢到对端通过对端访问Internet，以下是Cisco1800路由器上的配置，VPN对端采用的是Linux Ubuntu的Openswan做IPSec路由器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">crypto isakmp policy 1</div><div class="line"> encr 3des</div><div class="line"> <span class="built_in">hash</span> md5</div><div class="line"> authentication pre-share</div><div class="line"> group 2</div><div class="line">crypto isakmp key 123@abcd（自定义密钥） address 对端公网地址</div><div class="line">crypto ipsec security-association lifetime seconds 28800</div><div class="line">crypto ipsec transform-set <span class="built_in">test</span>（自定义名称） esp-3des esp-md5-hmac</div><div class="line">crypto map ebt（自定义名称） 1 ipsec-isakmp</div><div class="line"> <span class="built_in">set</span> peer 对端公网</div><div class="line"> <span class="built_in">set</span> transform-set <span class="built_in">test</span></div><div class="line"> match address 100</div><div class="line"></div><div class="line">access-list 100 permit ip 内网感兴趣流 反掩码 any</div></pre></td></tr></table></figure></p>
+<h4 id="配置基于ipsec的site-to-site-VPN"><a href="#配置基于ipsec的site-to-site-VPN" class="headerlink" title="配置基于ipsec的site to site VPN"></a>配置基于ipsec的site to site VPN</h4><p>　　此配置的目的在于内网地址能够将所有流量丢到对端通过对端访问Internet，以下是Cisco1800路由器上的配置，VPN对端采用的是Linux Ubuntu的Openswan做IPSec路由器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">crypto isakmp policy 1</div><div class="line"> encr 3des</div><div class="line"> <span class="built_in">hash</span> md5</div><div class="line"> authentication pre-share</div><div class="line"> group 2</div><div class="line">crypto isakmp key 123@abcd（自定义密钥） address 对端公网地址       定义共享密钥</div><div class="line">crypto ipsec security-association lifetime seconds 28800</div><div class="line">crypto ipsec transform-set <span class="built_in">test</span>（自定义名称） esp-3des esp-md5-hmac    定义IPSec的转换集</div><div class="line">crypto map ebt（自定义名称） 1 ipsec-isakmp</div><div class="line"> <span class="built_in">set</span> peer 对端公网</div><div class="line"> <span class="built_in">set</span> transform-set <span class="built_in">test</span></div><div class="line"> match address 100              调用相应的ACL列表</div><div class="line"></div><div class="line">access-list 100 permit ip 内网感兴趣流 反掩码 any        ACL列表定义感兴趣流</div><div class="line">最后记得在外网口敲上 crypto map ebt 来调用加密图</div></pre></td></tr></table></figure></p>
+<p>　　接下来是Linux端的配置（Linux为云上的虚机），需要用到openswan这个软件，这里我才用的是Ubuntu 14.0系统，在Ubuntu的源里面就有openswan，直接通过<code>apt-get install openswan</code>即可安装,假如安装遇到问题的小伙伴可以在下面留言区给我留言。安装完毕后即可进入配置文件配置IPSec文件。</p>
+<ol>
+<li><p>编辑ipsec.conf文件<br><code>vim /etc/ipsec.conf</code><br>修改如下参数：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">protostack=auto    </div><div class="line">to     </div><div class="line">protostack=netkey</div><div class="line"><span class="comment">#添加如下内容：(conn要顶格，下面的参数不能顶格)</span></div><div class="line">conn TEST</div><div class="line">    authby=secret</div><div class="line">    auto=start</div><div class="line">    ike=3des-md5;modp1024!</div><div class="line">    aggrmode=no</div><div class="line">    salifetime=8h</div><div class="line">    keyexchang=ike</div><div class="line">    esp=3des-md5</div><div class="line">    <span class="built_in">type</span>=tunnel</div><div class="line">    left=x.x.x.x        <span class="comment">#注意：假如是AWS，此处填内网地址，假如是阿里云，此处填公网地址</span></div><div class="line">    leftsubent=0.0.0.0/0</div><div class="line">    right=对端公网地址</div><div class="line">    rightsubnet=对端内网地址</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改IPSec.secrets文件<code>vim /etc/ipsec.secrets</code>,首先把最后一句include注释掉,再添加：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">leftip rightip： PSK <span class="string">"123@abcd"</span>（自定义密钥）</div><div class="line">例如：</div><div class="line">47.90.108.113 151.29.114.195：PSK <span class="string">"123@abcd"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>开启路由转发，禁用ICMP重定向<br>编辑sysctl.conf文件：<code>vim /etc/sysctl.conf</code>添加如下内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">net.ipv4.ip_forward = 1</div><div class="line">net.ipv4.conf.all.accept_redirects = 0</div><div class="line">net.ipv4.conf.all.send_redirects = 0</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置iptables并开机自动加载<br>编辑rc.local文件<code>vim /etc/rc.local</code>并在exit 0前面添加如下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">iptables --table nat --append POSTROUTING --jump MASQUERADE</div><div class="line">iptables -A FORWARD -p tcp --syn <span class="_">-s</span> 0.0.0.0/0 -j TCPMSS --set-mss 1365</div><div class="line">上面一条是定义MTU值，由于数据包经过VPN加密后长度会改变，所以需要修改MTU值，否则有影响到正常的网页访问，一般设在1300-1500之间</div><div class="line"><span class="keyword">for</span> each <span class="keyword">in</span> /proc/sys/net/ipv4/conf/*</div><div class="line"><span class="keyword">do</span></div><div class="line"> <span class="built_in">echo</span> 0 &gt; <span class="variable">$each</span>/accept_redirects</div><div class="line"> <span class="built_in">echo</span> 0 &gt; <span class="variable">$each</span>/send_redirects</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><br></p>
+<h4 id="Trouble-shooting"><a href="#Trouble-shooting" class="headerlink" title="Trouble shooting"></a>Trouble shooting</h4><p>在云端服务器上<br>通过：<code>service ipsec status</code>可查看VPN隧道是否建立。<br>通过：<code>ipsec verify</code>可以查看云端ipsec服务是否正常启动（不能有failed）<br><br><br>在路由器上<br>通过：<code>show crypto isakmap sa</code>可查看ipsec第一阶段协商是否通过，状态为QM则协商通过<br>通过：<code>show crypto ipsec sa</code>可查看第二阶段协商是否通过，转换集是否生效，数据是否有加解密<br><br><br><br></p>
 
       
     </div>
@@ -463,7 +480,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/11/06/Cisco-Router/"
-           data-title="Cisco路由器相关配置手册" data-url="http://blog.senhonsakura.com/2016/11/06/Cisco-Router/">
+           data-title="Cisco路由器L2L VPN和云端互联实现无拨号翻墙" data-url="http://blog.senhonsakura.com/2016/11/06/Cisco-Router/">
       </div>
     
   </div>
@@ -590,7 +607,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Cisco-1800路由器"><span class="nav-text">Cisco 1800路由器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置telnet登陆密码"><span class="nav-text">配置telnet登陆密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置snmp"><span class="nav-text">配置snmp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置基于ipsec的site-to-site-VPN"><span class="nav-text">配置基于ipsec的site to site VPN</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置telnet登陆密码"><span class="nav-text">配置telnet登陆密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置snmp"><span class="nav-text">配置snmp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置基于ipsec的site-to-site-VPN"><span class="nav-text">配置基于ipsec的site to site VPN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Trouble-shooting"><span class="nav-text">Trouble shooting</span></a></li></ol></div>
             
           </div>
         </section>
