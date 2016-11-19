@@ -370,7 +370,7 @@
       
 
       
-        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>　　主要介绍一下Cisco路由器如何配置IPSec VPN和云端软件防火墙实现VPN通信，从而达到在内网无需拨号即可访问国外网站，不同版本间配置方式可能可能会有所不同，但知道了原理后基本上也都是大同小异，ジア　行きましょう<br><a id="more"></a></p>
+        <script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>　　主要介绍一下Cisco路由器如何配置IPSec VPN和云端软件防火墙实现VPN通信，从而达到在内网无需拨号即可访问国外网站，不同版本间配置方式可能可能会有所不同，但知道了原理后基本上也都是大同小异，ジア　行きましょう<br><a id="more"></a></p>
 <h4 id="配置telnet登陆密码"><a href="#配置telnet登陆密码" class="headerlink" title="配置telnet登陆密码"></a>配置telnet登陆密码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">conf t</div><div class="line"><span class="built_in">enable</span> password <span class="string">"password"</span>     //配置<span class="built_in">enable</span>密码</div><div class="line">line vty 0 4</div><div class="line">password <span class="string">"password"</span>      //配置telnet登陆密码</div><div class="line">login</div></pre></td></tr></table></figure>
 <p><br></p>
 <h4 id="配置snmp"><a href="#配置snmp" class="headerlink" title="配置snmp"></a>配置snmp</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">snmp-server community crm     //crm为自定义的共同体名称，常用Public</div><div class="line">snmp-server <span class="built_in">trap</span>-source FastEthernet0/3/0    //定义那个端口可被监控，一般可不写</div><div class="line">snmp-server host x.x.x.x crm          //在哪台终端（公网地址x.x.x.x）上应用上述定义的共同体</div><div class="line">snmp-server <span class="built_in">enable</span> traps               //启用snmp</div></pre></td></tr></table></figure>
@@ -455,6 +455,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/11/17/acwx3010e/" rel="prev" title="H3C WX3010E跨三层部署实现多SSID发布">
+                H3C WX3010E跨三层部署实现多SSID发布 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -525,7 +529,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -535,7 +539,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
