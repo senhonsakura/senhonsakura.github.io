@@ -111,7 +111,7 @@
 <meta property="og:description" content="本文章主要介绍了跨三层部署H3C WX3010E AC控制器和AP的配置方式和注意事项，主要的拓扑架构如下：
 需求　　AC和AP的注册VLAN是20，IP Subnet 192.168.20.0　　AP发射两个无线信号，所属的VLAN分别为30（192.168.30.0）和31（192.168.31.0）　　DHCP Server为核心交换机">
 <meta property="og:image" content="http://ofp7w8pn7.bkt.clouddn.com/AC%E8%B7%A8%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84.jpg">
-<meta property="og:updated_time" content="2016-11-19T12:28:56.822Z">
+<meta property="og:updated_time" content="2016-11-19T12:33:03.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="H3C WX3010E跨三层部署实现多SSID发布">
 <meta name="twitter:description" content="本文章主要介绍了跨三层部署H3C WX3010E AC控制器和AP的配置方式和注意事项，主要的拓扑架构如下：
@@ -402,7 +402,7 @@
 <p><br></p>
 <h4 id="核心交换机配置"><a href="#核心交换机配置" class="headerlink" title="核心交换机配置"></a>核心交换机配置</h4><p>　　前提是三层设备能正常访问外网，这里我用的是H3C S5500三层交换机，同厂商不同设备配置方式大同小异。<br>划分VLAN<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">VLAN20</div><div class="line">VLAN30</div><div class="line">VLAN31</div></pre></td></tr></table></figure></p>
 <p>定义接口类型<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">interface Vlan-interface20             <span class="comment">#定义三层接口</span></div><div class="line"> ip address 192.168.20.1 255.255.255.0</div><div class="line">interface Vlan-interface30</div><div class="line"> ip address 192.168.30.1 255.255.255.0</div><div class="line">interface Vlan-interface31</div><div class="line"> ip address 192.168.31.1 255.255.255.0</div><div class="line">interface GigabitEthernet1/0/4         <span class="comment">#此接口与AP相连</span></div><div class="line"> port link-type trunk</div><div class="line"> port trunk permit vlan all</div><div class="line"> port trunk pvid vlan 21</div><div class="line">interface GigabitEthernet1/0/14        <span class="comment">#此接口与AC相连</span></div><div class="line"> port link-type trunk</div><div class="line"> port trunk permit vlan all</div></pre></td></tr></table></figure></p>
-<p>启用DHCP<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">dhcp server ip-pool vlan20</div><div class="line"> network 192.168.20.0 mask 255.255.255.0</div><div class="line"> gateway-list 192.168.20.1</div><div class="line"> dns-list 221.6.4.66 114.114.114.114</div><div class="line">dhcp server ip-pool vlan30</div><div class="line"> network 192.168.30.0 mask 255.255.255.0</div><div class="line"> gateway-list 192.168.30.1</div><div class="line"> dns-list 221.6.4.66 114.114.114.114</div><div class="line">dhcp server ip-pool vlan31</div><div class="line"> network 192.168.31.0 mask 255.255.255.0</div><div class="line"> gateway-list 192.168.31.1</div><div class="line"> dns-list 221.6.4.66 114.114.114.114</div></pre></td></tr></table></figure></p>
+<p>启用DHCP<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">dhcp server ip-pool vlan20</div><div class="line"> network 192.168.20.0 mask 255.255.255.0</div><div class="line"> gateway-list 192.168.20.1</div><div class="line"> dns-list 221.6.4.66 114.114.114.114</div><div class="line">dhcp server ip-pool vlan30</div><div class="line"> network 192.168.30.0 mask 255.255.255.0</div><div class="line"> gateway-list 192.168.30.1</div><div class="line"> dns-list 221.6.4.66 114.114.114.114</div><div class="line">dhcp server ip-pool vlan31</div><div class="line"> network 192.168.31.0 mask 255.255.255.0</div><div class="line"> gateway-list 192.168.31.1</div><div class="line"> dns-list 221.6.4.66 114.114.114.114</div></pre></td></tr></table></figure></p>
 <p><br></p>
 <h4 id="Trouble-shouting"><a href="#Trouble-shouting" class="headerlink" title="Trouble shouting"></a>Trouble shouting</h4><ul>
 <li>通过display wlan ap 命令用来显示指定AP或所有AP的信息</li>
@@ -410,7 +410,7 @@
 <li>通过display wlan ap connection record 命令用来显示AP的连接记录</li>
 <li>通过reset wlan ap connection record 清楚记录</li>
 <li>通过display wlan client 命令用来查看指定无线客户端或者所有无线客户端的信息</li>
-<li>通过display arp all 命令来查看AC板卡是否有去往三层设备的arp<br>有什么疑问或不对的地方希望各位大大在下面留言指正，感谢~<br><br><br><br></li>
+<li>通过display arp all 命令来查看AC板卡是否有去往三层设备的arp<br><br><br>有什么疑问或不对的地方希望各位大大在下面留言指正，感谢~<br><br><br><br></li>
 </ul>
 
       
