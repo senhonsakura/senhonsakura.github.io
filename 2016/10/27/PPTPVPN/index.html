@@ -373,7 +373,7 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>　　相信很多小伙伴都有搭建VPN服务器的经历，在搭建的时候我们会遇到很多问题，经过不懈努力，总算是搭建好了服务器，但日常的使用中我们又该怎么进行维护呢？这又是一个头疼的问题，接下来是我本人搭建PPTP VPN服务器时的一些经验供大家参考。</p>
+        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>　　相信很多小伙伴都有搭建VPN服务器的经历，在搭建的时候我们会遇到很多问题，经过不懈努力，总算是搭建好了服务器，但日常的使用中我们又该怎么进行维护呢？这又是一个头疼的问题，接下来是我本人搭建PPTP VPN服务器时的一些经验供大家参考。</p>
 <h4 id="建立监控日志"><a href="#建立监控日志" class="headerlink" title="建立监控日志"></a>建立监控日志</h4><p>　　搭建好的服务器别忘了配置用户登录和登出监控日志，这样有助于我们及时发现问题以此来解决问题，防患未然。这里主要针对是OS为Ubuntu 14.0的PPTP服务器的优化方式，其他Linux操作系统不保证方法通用哟<br><a id="more"></a><br>使用cd命令分别进入到ppp目录下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd /etc/ppp/</div></pre></td></tr></table></figure>
 <p>接下来使用如下命令：<code>sudo vim ip-up</code>编辑ip-up文件<br>在末尾处添加：</p>

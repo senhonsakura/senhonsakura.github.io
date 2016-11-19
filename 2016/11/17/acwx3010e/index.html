@@ -103,25 +103,19 @@
 
 
 <meta name="description" content="本文章主要介绍了跨三层部署H3C WX3010E AC控制器和AP的配置方式和注意事项，主要的拓扑架构如下：
-需求　　AC和AP的注册VLAN是20，IP Subnet 192.168.20.0　　AP发射两个无线信号，所属的VLAN分别为30（192.168.30.0）和31（192.168.31.0）　　DHCP Server为核心交换机
-AC配置
-首先通过192.168.0.101进">
+需求　　AC和AP的注册VLAN是20，IP Subnet 192.168.20.0　　AP发射两个无线信号，所属的VLAN分别为30（192.168.30.0）和31（192.168.31.0）　　DHCP Server为核心交换机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="H3C WX3010E跨三层部署实现多SSID发布">
 <meta property="og:url" content="http://blog.senhonsakura.com/2016/11/17/acwx3010e/index.html">
 <meta property="og:site_name" content="Zhangcy's Blog">
 <meta property="og:description" content="本文章主要介绍了跨三层部署H3C WX3010E AC控制器和AP的配置方式和注意事项，主要的拓扑架构如下：
-需求　　AC和AP的注册VLAN是20，IP Subnet 192.168.20.0　　AP发射两个无线信号，所属的VLAN分别为30（192.168.30.0）和31（192.168.31.0）　　DHCP Server为核心交换机
-AC配置
-首先通过192.168.0.101进">
+需求　　AC和AP的注册VLAN是20，IP Subnet 192.168.20.0　　AP发射两个无线信号，所属的VLAN分别为30（192.168.30.0）和31（192.168.31.0）　　DHCP Server为核心交换机">
 <meta property="og:image" content="http://ofp7w8pn7.bkt.clouddn.com/AC%E8%B7%A8%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84.jpg">
-<meta property="og:updated_time" content="2016-11-19T12:25:49.608Z">
+<meta property="og:updated_time" content="2016-11-19T12:28:56.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="H3C WX3010E跨三层部署实现多SSID发布">
 <meta name="twitter:description" content="本文章主要介绍了跨三层部署H3C WX3010E AC控制器和AP的配置方式和注意事项，主要的拓扑架构如下：
-需求　　AC和AP的注册VLAN是20，IP Subnet 192.168.20.0　　AP发射两个无线信号，所属的VLAN分别为30（192.168.30.0）和31（192.168.31.0）　　DHCP Server为核心交换机
-AC配置
-首先通过192.168.0.101进">
+需求　　AC和AP的注册VLAN是20，IP Subnet 192.168.20.0　　AP发射两个无线信号，所属的VLAN分别为30（192.168.30.0）和31（192.168.31.0）　　DHCP Server为核心交换机">
 <meta name="twitter:image" content="http://ofp7w8pn7.bkt.clouddn.com/AC%E8%B7%A8%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84.jpg">
 
 
@@ -382,7 +376,7 @@ AC配置
 
       
         <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>　　本文章主要介绍了跨三层部署H3C WX3010E AC控制器和AP的配置方式和注意事项，主要的拓扑架构如下：<br><br><br><img src="http://ofp7w8pn7.bkt.clouddn.com/AC%E8%B7%A8%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84.jpg" alt="拓扑图"></p>
-<h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><p>　　AC和AP的注册VLAN是20，IP Subnet 192.168.20.0<br>　　AP发射两个无线信号，所属的VLAN分别为30（192.168.30.0）和31（192.168.31.0）<br>　　DHCP Server为核心交换机<br><br></p>
+<h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><p>　　AC和AP的注册VLAN是20，IP Subnet 192.168.20.0<br>　　AP发射两个无线信号，所属的VLAN分别为30（192.168.30.0）和31（192.168.31.0）<br>　　DHCP Server为核心交换机<br><a id="more"></a><br><br></p>
 <h4 id="AC配置"><a href="#AC配置" class="headerlink" title="AC配置"></a>AC配置</h4><ol>
 <li><p>首先通过192.168.0.101进入到交换板卡，默认用户名和密码是admin<br>定义VLAN</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vlan20</div><div class="line">vlan30</div><div class="line">vlan31</div></pre></td></tr></table></figure>
